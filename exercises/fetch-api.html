@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var url = 'http://study.163.com/webDev/hotcouresByCategory.htm';
+
+        fetch(url,{mode:'cors',method:'GET'}).then(function(res) {
+        // res instanceof Response == true.
+        if (res.ok) {
+            res.json().then(function(data) {
+            console.log(data);
+            });
+        } else {
+            console.log("Looks like the response wasn't perfect, got status", res.status);
+        }
+        }, function(e) {
+            console.log("Fetch failed!", e);
+        });  
+
+
+    </script>   
+</head>
+<body>
+
+</body>
+</html>
